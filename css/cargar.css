@@ -1,0 +1,131 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/fondo_formu.jpg'); 
+    background-size: cover;
+    background-position: center;
+    filter: blur(3px); 
+    z-index: -1; 
+}
+
+header a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+}
+
+header h1 {
+    margin: 5;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #444;
+    padding: 1rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    margin: 0 1rem;
+    font-weight: bold;
+    border: 2px solid transparent;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+nav a:hover {
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+main {
+    flex: 1; 
+    max-width: 400px;
+    margin: 3rem auto;
+    padding: 2rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form h2 {
+    font-size: 1.7rem;    
+    margin-bottom: 1rem;  
+    text-align: center; 
+    color: #333; 
+}
+
+form div {
+    margin-bottom: 1rem;
+}
+
+form label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+    color: #444; 
+    color: white; 
+    transition: background-color 0.3s ease-in-out;
+}
+
+form input[type="file"],
+form input[type="submit"] {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+form input[type="submit"]:hover {
+    background-color: #333;  
+    cursor: pointer;
+    color: #f0f0f0;
+}
+
+footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 1rem 0;
+}

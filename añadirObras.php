@@ -17,6 +17,12 @@
     </nav>
 
     <main>
+        <?php if (isset($_GET['status']) && isset($_GET['msg'])): ?>
+            <p class="mensaje mensaje-<?php echo htmlspecialchars($_GET['status']); ?>">
+                <?php echo htmlspecialchars($_GET['msg']); ?>
+            </p>
+        <?php endif; ?>
+
         <form action="carga.php" method="post" enctype="multipart/form-data">
             <div>
                 <label for="obra"><h2>Añadir Obra</h2></label>

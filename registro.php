@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarme - Galería Dos Santos</title>
+    <link rel="stylesheet" href="../obras/css/cargar.css">
+</head>
+<body>
+    <header>
+        <a href="index.php"><h1>Galería Dos Santos</h1></a>
+    </header>
+
+    <nav>
+        <a href="añadirObras.php">Añadir Obras</a>
+        <a href="verObras.php">Ver Obras</a>
+        <a href="login.php">Iniciar sesión</a>
+        <a href="registro.php">Registrarme</a>
+    </nav>
+
+    <main>
+        <?php if (isset($_GET['status']) && isset($_GET['msg'])): ?>
+            <p class="mensaje mensaje-<?php echo htmlspecialchars($_GET['status']); ?>">
+                <?php echo htmlspecialchars($_GET['msg']); ?>
+            </p>
+        <?php endif; ?>
+
+        <form action="procesarRegistro.php" method="post">
+            <div>
+                <label for="nombre_usuario"><h2>Crear cuenta</h2></label>
+            </div>
+            <div>
+                <label for="nombre_usuario">Nombre de usuario</label>
+                <input id="nombre_usuario" name="nombre_usuario" type="text" required maxlength="50">
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required maxlength="100">
+            </div>
+            <div>
+                <label for="contrasena">Contraseña</label>
+                <input id="contrasena" name="contrasena" type="password" required minlength="6">
+            </div>
+            <div>
+                <label for="confirmar_contrasena">Confirmar contraseña</label>
+                <input id="confirmar_contrasena" name="confirmar_contrasena" type="password" required minlength="6">
+            </div>
+            <div>
+                <input type="submit" value="Registrarme">
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <p>Todos los derechos reservados a la Galería</p>
+    </footer>
+</body>
+</html>

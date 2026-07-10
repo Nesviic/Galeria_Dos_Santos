@@ -14,6 +14,8 @@
     <nav>
         <a href="añadirObras.php">Añadir Obras</a>
         <a href="verObras.php">Ver Obras</a>
+        <a href="login.php">Iniciar sesión</a>
+        <a href="registro.php">Registrarme</a>
     </nav>
 
     <main>

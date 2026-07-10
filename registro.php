@@ -12,11 +12,15 @@
     </header>
 
     <nav>
+    <div class="nav-principal">
         <a href="añadirObras.php">Añadir Obras</a>
         <a href="verObras.php">Ver Obras</a>
+    </div>
+    <div class="nav-cuenta">
         <a href="login.php">Iniciar sesión</a>
-        <a href="registro.php">Registrarme</a>
-    </nav>
+        <a href="registro.php" class="btn-registro">Registrarme</a>
+    </div>
+</nav>
 
     <main>
         <?php if (isset($_GET['status']) && isset($_GET['msg'])): ?>

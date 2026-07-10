@@ -12,10 +12,14 @@
     </header>
 
     <nav>
-        <a href="añadirObras.php">Añadir Obras</a>
-        <a href="verObras.php">Ver Obras</a>
-        <a href="login.php">Iniciar sesión</a>
-        <a href="registro.php">Registrarme</a>
+        <div class="nav-principal">
+            <a href="añadirObras.php">Añadir Obras</a>
+            <a href="verObras.php">Ver Obras</a>
+        </div>
+        <div class="nav-cuenta">
+            <a href="login.php">Iniciar sesión</a>
+            <a href="registro.php" class="btn-registro">Registrarme</a>
+        </div>
     </nav>
 
     <main>
@@ -35,7 +39,7 @@
 
             if ($resultado->num_rows > 0) {
                 while ($fila = $resultado->fetch_assoc()) {
-                    echo "<div class='obra_arte'><img src='" . $fila['ruta'] . "'></div>";
+                    echo "<div class='obra'><img src='" . $fila['ruta'] . "'></div>";
                 }
             } else {
                 echo "<p>No hay obras subidas aún.</p>";

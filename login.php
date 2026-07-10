@@ -1,10 +1,18 @@
-<?php session_start(); ?>
+<?php
+session_start();
+
+// Si ya está logueado, no tiene sentido mostrar el formulario de nuevo
+if (isset($_SESSION['id_usuario'])) {
+    header('Location: index.php');
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Añadir Obras - Galería Dos Santos</title>
+    <title>Iniciar sesión - Galería Dos Santos</title>
     <link rel="stylesheet" href="../obras/css/cargar.css">
 </head>
 <body>
@@ -18,13 +26,8 @@
             <a href="verObras.php">Ver Obras</a>
         </div>
         <div class="nav-cuenta">
-            <?php if (isset($_SESSION['id_usuario'])): ?>
-                <span class="nav-saludo">Hola, <?php echo htmlspecialchars($_SESSION['nombre_usuario']); ?></span>
-                <a href="logout.php">Cerrar sesión</a>
-            <?php else: ?>
-                <a href="login.php">Iniciar sesión</a>
-                <a href="registro.php" class="btn-registro">Registrarme</a>
-            <?php endif; ?>
+            <a href="login.php">Iniciar sesión</a>
+            <a href="registro.php" class="btn-registro">Registrarme</a>
         </div>
     </nav>
 
@@ -35,13 +38,20 @@
             </p>
         <?php endif; ?>
 
-        <form action="carga.php" method="post" enctype="multipart/form-data">
+        <form action="procesarLogin.php" method="post">
             <div>
-                <label for="obra"><h2>Añadir Obra</h2></label>
-                <input id="obra" name="obras" type="file" accept="image/*">
+                <label for="identificador"><h2>Iniciar sesión</h2></label>
             </div>
             <div>
-                <input type="submit" value="Añadir">
+                <label for="identificador">Usuario o email</label>
+                <input id="identificador" name="identificador" type="text" required>
+            </div>
+            <div>
+                <label for="contrasena">Contraseña</label>
+                <input id="contrasena" name="contrasena" type="password" required>
+            </div>
+            <div>
+                <input type="submit" value="Ingresar">
             </div>
         </form>
     </main>

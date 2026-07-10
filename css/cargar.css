@@ -85,6 +85,12 @@ nav a:hover {
     border-color: #f5b959;
 }
 
+.nav-saludo {
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem 0.5rem;
+}
+
 main {
     flex: 1; 
     max-width: 400px;
